@@ -2,6 +2,61 @@
 
 A Flutter mobile application that displays current weather conditions based on the user's geographical location. Built with Clean Architecture principles and GetX for state management.
 
+## Screenshots
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="assets/project_screen/splash page.png" alt="Splash Screen" width="200"/>
+        <br><strong>Splash Screen</strong>
+      </td>
+      <td align="center">
+        <img src="assets/project_screen/Home page.png" alt="Home Page" width="200"/>
+        <br><strong>Home Page</strong>
+      </td>
+      <td align="center">
+        <img src="assets/project_screen/location permission.png" alt="Location Permission" width="200"/>
+        <br><strong>Location Permission</strong>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## Weather Icons
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="assets/images/1.png" alt="Thunderstorm" width="120"/>
+        <br><strong>Thunderstorm</strong>
+        <br><small>(Code: 200-299)</small>
+      </td>
+      <td align="center">
+        <img src="assets/images/2.png" alt="Drizzle" width="120"/>
+        <br><strong>Drizzle</strong>
+        <br><small>(Code: 300-399)</small>
+      </td>
+      <td align="center">
+        <img src="assets/images/3.png" alt="Rain" width="120"/>
+        <br><strong>Rain</strong>
+        <br><small>(Code: 500-599)</small>
+      </td>
+      <td align="center">
+        <img src="assets/images/4.png" alt="Snow" width="120"/>
+        <br><strong>Snow</strong>
+        <br><small>(Code: 600-699)</small>
+      </td>
+      <td align="center">
+        <img src="assets/images/6.png" alt="Clear Sky" width="120"/>
+        <br><strong>Clear Sky</strong>
+        <br><small>(Code: 800)</small>
+      </td>
+    </tr>
+  </table>
+</div>
+
 ## Features
 
 - **Automatic Location Detection**: Automatically detects the device's current latitude and longitude upon startup
@@ -140,21 +195,6 @@ lib/
 └── my_app.dart
 ```
 
-## Screenshots
-
-<!-- Add your screenshots here after testing the app -->
-<!-- Example format:
-![Home Screen](screenshots/home_screen.png)
-![Loading State](screenshots/loading.png)
-![Error State](screenshots/error.png)
--->
-
-### Screenshots Placeholder
-
-Please add screenshots of the app in action:
-1. Home screen with weather data
-2. Loading state
-3. Error state (if applicable)
 
 ## Getting Started
 
