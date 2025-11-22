@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:get/get.dart';
-import '../../core/di/injection_container.dart';
+import '../../core/dependency_injections/injection_container.dart';
 import '../../core/utils/date_helper.dart';
 import '../../domain/entities/weather_entity.dart';
 import '../../domain/repositories/location_repository.dart';
