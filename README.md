@@ -2,6 +2,12 @@
 
 A Flutter mobile application that displays current weather conditions based on the user's geographical location. Built with Clean Architecture principles and GetX for state management.
 
+## 📹 Project Explanation Video
+
+Watch the project demonstration and explanation:
+
+**[🎥 Watch Video on Loom](https://www.loom.com/share/483e9d08c5eb42318d19523ebb08497e)**
+
 ## Screenshots
 
 <div align="center">
