@@ -12,8 +12,14 @@ A Flutter mobile application that displays current weather conditions based on t
   - Weather Condition (e.g., "Clear," "Rain," "Clouds")
   - Weather Icon
   - Minimum and Maximum Daily Temperatures
-- **Pull-to-Refresh**: Swipe down to refresh weather data
+  - Sunrise and Sunset Times
+- **Automatic Updates**:
+  - **Weather Data**: Automatically refreshes every 5 minutes in the background
+  - **Time Display**: Updates every 1 minute to show current time
+  - **Silent Updates**: Background updates happen seamlessly without flickering or disrupting user experience
+- **Pull-to-Refresh**: Swipe down to refresh weather data manually
 - **Error Handling**: User-friendly error messages with retry functionality
+- **Splash Screen**: Beautiful animated splash screen on app launch
 
 ## Architecture
 
@@ -67,6 +73,26 @@ flutter pub run build_runner build --delete-conflicting-outputs
 flutter run
 ```
 
+## Automatic Updates
+
+The app features intelligent automatic updates:
+
+- **Weather Data Updates**: 
+  - Automatically fetches fresh weather data every **5 minutes**
+  - Updates happen silently in the background
+  - No loading indicators or flickering during updates
+  - Previous data remains visible while new data loads
+
+- **Time Display Updates**:
+  - Current time updates every **1 minute**
+  - Shows time in 12-hour format (e.g., "8:18 PM")
+  - Updates independently from weather data
+
+- **Customization**:
+  - Update intervals can be customized in `lib/presentation/controllers/weather_controller.dart`
+  - Change `_weatherUpdateInterval` for weather update frequency
+  - Change `_timeUpdateInterval` for time update frequency
+
 ## Permissions
 
 The app requires location permissions to function:
@@ -103,8 +129,12 @@ lib/
 ├── presentation/
 │   ├── controllers/
 │   │   └── weather_controller.dart
+│   ├── pages/
+│   │   └── splash_screen.dart
+│   ├── weather/
+│   │   └── weather_page.dart
 │   └── widgets/
-│       └── weather_icon.dart
+│       └── weather_asset_helper.dart
 ├── home_screen.dart
 ├── main.dart
 └── my_app.dart
