@@ -18,8 +18,10 @@ class WeatherController extends GetxController {
 
   Timer? _autoUpdateTimer;
   Timer? _timeUpdateTimer;
-  static const Duration _weatherUpdateInterval = Duration(minutes: 5); // Update weather every 5 minutes
-  static const Duration _timeUpdateInterval = Duration(minutes: 1); // Update time every 1 minute
+  static const Duration _weatherUpdateInterval =
+      Duration(minutes: 5); // Update weather every 5 minutes
+  static const Duration _timeUpdateInterval =
+      Duration(minutes: 1); // Update time every 1 minute
 
   @override
   void onInit() {
@@ -121,4 +123,3 @@ class WeatherController extends GetxController {
     await fetchWeather(showLoading: false); // Manual refresh also silent
   }
 }
-
