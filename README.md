@@ -2,6 +2,12 @@
 
 A Flutter mobile application that displays current weather conditions based on the user's geographical location. Built with Clean Architecture principles and GetX for state management.
 
+## 📱 Download APK
+
+Download the app APK file:
+
+**[⬇️ Download Weather.apk (16.6 MB)](https://drive.google.com/drive/folders/1Qfq-ZEPT7DU6oK7sgv_qzFY-XoJMbHnc?usp=sharing)**
+
 ## 📹 Project Explanation Video
 
 Watch the project demonstration and explanation:
