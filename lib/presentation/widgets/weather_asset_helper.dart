@@ -22,9 +22,9 @@ class WeatherAssetHelper {
     }
   }
   
-  static String getSunriseIcon() => 'assets/images/11.png';
-  static String getSunsetIcon() => 'assets/images/12.png';
-  static String getTempMaxIcon() => 'assets/images/13.png';
-  static String getTempMinIcon() => 'assets/images/14.png';
+  static String getSunriseIcon() => 'assets/images/11.png';  // Sunrise icon
+  static String getSunsetIcon() => 'assets/images/12.png';  // Sunset icon
+  static String getTempMaxIcon() => 'assets/images/13.png';  // Temperature max icon
+  static String getTempMinIcon() => 'assets/images/14.png';  // Temperature min icon
 }
 

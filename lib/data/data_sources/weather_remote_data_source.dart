@@ -37,10 +37,8 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
         final message = errorData['message'] as String? ?? 'Unknown error';
         throw Exception('Failed to load weather: $message');
       } catch (_) {
-        throw Exception(
-            'Failed to load weather data: ${response.statusCode}');
+        throw Exception('Failed to load weather data: ${response.statusCode}');
       }
     }
   }
 }
-

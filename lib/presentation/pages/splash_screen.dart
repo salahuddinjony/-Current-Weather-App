@@ -6,56 +6,56 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreen> createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
+class SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-  late AnimationController _fadeController;
-  late AnimationController _scaleController;
-  late AnimationController _rotationController;
-  late Animation<double> _fadeAnimation;
-  late Animation<double> _scaleAnimation;
-  late Animation<double> _rotationAnimation;
+  late AnimationController fadeController;
+  late AnimationController scaleController;
+  late AnimationController rotationController;
+  late Animation<double> fadeAnimation;
+  late Animation<double> scaleAnimation;
+  late Animation<double> rotationAnimation;
 
   @override
   void initState() {
     super.initState();
 
     // Fade animation
-    _fadeController = AnimationController(
+    fadeController = AnimationController(
       duration: const Duration(milliseconds: 1500),
       vsync: this,
     );
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _fadeController, curve: Curves.easeIn),
+    fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: fadeController, curve: Curves.easeIn),
     );
 
     // Scale animation
-    _scaleController = AnimationController(
+    scaleController = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
+    scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
       CurvedAnimation(
-        parent: _scaleController,
+        parent: scaleController,
         curve: Curves.elasticOut,
       ),
     );
 
     // Rotation animation for cloud
-    _rotationController = AnimationController(
+    rotationController = AnimationController(
       duration: const Duration(milliseconds: 3000),
       vsync: this,
     );
-    _rotationAnimation = Tween<double>(begin: 0.0, end: 0.1).animate(
-      CurvedAnimation(parent: _rotationController, curve: Curves.easeInOut),
+    rotationAnimation = Tween<double>(begin: 0.0, end: 0.1).animate(
+      CurvedAnimation(parent: rotationController, curve: Curves.easeInOut),
     );
 
     // Start animations
-    _fadeController.forward();
-    _scaleController.forward();
-    _rotationController.repeat(reverse: true);
+    fadeController.forward();
+    scaleController.forward();
+    rotationController.repeat(reverse: true);
 
     // Navigate to home screen after delay
     Future.delayed(const Duration(seconds: 3), () {
@@ -67,9 +67,9 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    _fadeController.dispose();
-    _scaleController.dispose();
-    _rotationController.dispose();
+    fadeController.dispose();
+    scaleController.dispose();
+    rotationController.dispose();
     super.dispose();
   }
 
@@ -89,27 +89,27 @@ class _SplashScreenState extends State<SplashScreen>
         ),
         child: Center(
           child: FadeTransition(
-            opacity: _fadeAnimation,
+            opacity: fadeAnimation,
             child: ScaleTransition(
-              scale: _scaleAnimation,
+              scale: scaleAnimation,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Animated Weather Icon with pulsing effect
                   AnimatedBuilder(
-                    animation: _scaleController,
+                    animation: scaleController,
                     builder: (context, child) {
                       return Container(
-                        width: 120 + (_scaleController.value * 20),
-                        height: 120 + (_scaleController.value * 20),
+                        width: 120 + (scaleController.value * 20),
+                        height: 120 + (scaleController.value * 20),
                         decoration: BoxDecoration(
                           color: Colors.white.withValues(
-                            alpha: 0.2 - (_scaleController.value * 0.1),
+                            alpha: 0.2 - (scaleController.value * 0.1),
                           ),
                           shape: BoxShape.circle,
                         ),
                         child: RotationTransition(
-                          turns: _rotationAnimation,
+                          turns: rotationAnimation,
                           child: const Icon(
                             Icons.wb_sunny,
                             size: 80,
@@ -122,7 +122,7 @@ class _SplashScreenState extends State<SplashScreen>
                   const SizedBox(height: 40),
                   // App Name with fade animation
                   FadeTransition(
-                    opacity: _fadeAnimation,
+                    opacity: fadeAnimation,
                     child: const Text(
                       'Weather App',
                       style: TextStyle(
@@ -156,7 +156,7 @@ class _SplashScreenState extends State<SplashScreen>
                   const SizedBox(height: 60),
                   // Loading indicator
                   FadeTransition(
-                    opacity: _fadeAnimation,
+                    opacity: fadeAnimation,
                     child: const SizedBox(
                       width: 40,
                       height: 40,
@@ -175,4 +175,3 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-
